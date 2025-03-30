@@ -36,7 +36,7 @@ def filter_files(files, min_size=9938, min_date="1995-08-10 19:16:00"):
     
     return total_size
 
-@app.post("/api/")
+@app.post("http://127.0.0.1:8000/api/")
 async def get_answer(question: str = Form(...), file: UploadFile = None):
     # Save the uploaded file to a temporary location
     file_location = f"temp/{file.filename}"
